@@ -38,7 +38,7 @@ namespace StringEnum
             FieldInfo fieldInfo = value.GetType().GetField(value.ToString());
             if (fieldInfo == null) return null;
             var attribute = (StringValueAttribute)fieldInfo.GetCustomAttribute(typeof(StringValueAttribute));
-            return attribute == null ? null : attribute.Value;
+            return attribute?.Value;
         }
 
         /// <summary>
